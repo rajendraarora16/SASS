@@ -1,0 +1,145 @@
+@use "sass:math";
+
+// spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+// border
+$base-border-thickness: 1rem;
+$base-value: 5px;
+$base-border-radius: math.div(2.5px, 2);
+
+// font
+$base-font-size: 3 * $base-border-thickness;
+
+// color
+$primary: #326dee;
+$secondary: #1ac886;
+$error: #d32752;
+$info: #f6c31c;
+
+// map
+$color: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "error": $error,
+    "info": $info,
+    "blue": #1919E6,
+    "red": #E61919,
+    "yellow": #E6E619,
+    "green": #19E635,
+    "orange": #FFa600,
+    "purple": #9900FF,
+    "grey": #808080,
+    "black": black,
+    "white": white,
+);
+
+
+// dark theme
+
+@each $key, $val in $color {
+    @for $i from 1 through 9 {
+        .h3-#{$key}-dark-#{$i}-background {
+            background-color: mix(black, $val, ($i * 10%));
+        }
+    }
+}
+
+@each $key, $val in $color {
+    $i: index($color, ($key $val));
+    .text-color-#{$key}-text-#{$i} {
+        &:hover {
+            color: $val;
+        }
+
+        &:after {
+            content: "Foo";
+        }
+
+        &:nth-child(5) {
+            color: $val;
+        }
+    }
+}
+
+
+$car-font-size: (
+    "smallSize": 12px,
+    "mediumSize": 15px,
+    "largeSize": 20px, 
+);
+
+@debug "Car font size" $car-font-size;
+
+@each $key, $value in $car-font-size {
+    $index: index($car-font-size, ($key $value));
+
+
+    @debug "Index value" $index;
+   
+    @debug "Key" $key "and value" $value;
+    @if($value == 15px) {
+        @debug "*******nd" $key "and val" $value;
+    } @else {
+        @debug "Not found anything";
+    }
+}
+
+@for $i from 1 through length($car-font-size) {
+    @debug "Valll: "$i;
+}
+
+@each $key, $val in $color {
+    @debug "key" $key "and val" $val;
+}
+
+@debug "length of color" length($color);
+
+@each $key, $val in $color {
+    $index: index($color, ($key $val));
+
+    @debug "index " $index;
+    
+    @if ($key == "red2" or $key == "blue") {
+        @debug "Caught color" $key "and " $val;
+    } @else {
+        @debug "Caught nothing";
+    }
+
+    @for $i from 1 through 9 {
+        @debug mix(white, #812525, 10%);
+    }
+}
+
+$list: [1, 3, 4, 5];
+
+@debug "sd" $list;
+
+@for $i from 1 through 10 {
+    @debug "number" $i;
+}
+
+@if(10 == 110) {
+    .if_class {
+        color: rgb(215, 51, 51);
+    }
+} @else {
+    .else-class {
+        color: blue;
+    }
+}
+
+
+$color-code-arr: map-merge($map1: $color, $map2: ("foo": #BABABA));
+@debug "Printidng" map-get($color-code-arr, "foo");
+
+@debug "color is " map-get($color, "error");
+@debug "map is " map-remove($map: $color, $key: "info");
+@debug "map merge" map-merge($map1: $color, $map2: ("foo": #BABABA));
+
+//debug 
+@debug Rajendra ARora;
+@debug math.floor(52.299);
+@debug math.min(12px, 60px, 76px);
+@debug $color;
