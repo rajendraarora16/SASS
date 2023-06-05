@@ -180,3 +180,57 @@ $utilities: (
         }
     }
 }
+
+// Media queries in SASS
+$mediaSizes: (
+    "xs": 0,
+    "sm": 480px,
+    "md": 720px,
+    "lg": 960px,
+    "xl": 1200px,
+);
+
+
+@mixin xs {
+    @media (min-width: map-get($mediaSizes, "xs")) {
+        @content;
+    }
+}
+@mixin sm {
+    @media (min-width: map-get($mediaSizes, "sm")) {
+        @content;
+    }
+}
+@mixin md {
+    @media (min-width: map-get($mediaSizes, "md")) {
+        @content;
+    }
+}
+@mixin lg {
+    @media (min-width: map-get($mediaSizes, "lg")) {
+        @content;
+    }
+}
+@mixin xl {    
+    @media (min-width: map-get($mediaSizes, "xl")) {
+        @content;
+    }
+}
+
+.responsive-class {
+    @include xs {
+        color: red;
+    }
+    @include sm {
+        color: blue;
+    }
+    @include md {
+        color: violet;
+    }
+    @include lg {
+        color: greenyellow;
+    }
+    @include xl {
+        color: purple;
+    }
+}

@@ -992,3 +992,29 @@
 .p-4 {
   font-size: 16rem;
 }
+
+@media (min-width: 0) {
+  .responsive-class {
+    color: red;
+  }
+}
+@media (min-width: 480px) {
+  .responsive-class {
+    color: blue;
+  }
+}
+@media (min-width: 720px) {
+  .responsive-class {
+    color: violet;
+  }
+}
+@media (min-width: 960px) {
+  .responsive-class {
+    color: greenyellow;
+  }
+}
+@media (min-width: 1200px) {
+  .responsive-class {
+    color: purple;
+  }
+}
