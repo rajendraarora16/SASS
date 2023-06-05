@@ -76,7 +76,7 @@ $list: ("Manohar", "Reena", "Rajendra", "Neha");
     
     // For loop
     @for $i from 1 through 9 {
-        @debug "Iterating for loop: #{$i}";
+        @debug "Iterating 'for' loop: #{$i}";
 
         // dark theme
         .dark-theme {
@@ -89,6 +89,15 @@ $list: ("Manohar", "Reena", "Rajendra", "Neha");
         }
     }
 }
+
+// while loop in SASS
+$a: 0;
+
+@while $a <= 10 {
+    @debug "Iterating 'while' loop" $a;
+    $a: $a + 1;
+}
+
 
 // Using if else condition
 @if (5 > 10) {
