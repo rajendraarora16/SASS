@@ -1018,3 +1018,20 @@
     color: purple;
   }
 }
+
+.btn, .customized-btn-2, .customized-btn-1 {
+  font-size: 15px;
+  font-weight: 800;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
+.customized-btn-1 {
+  color: red;
+  background-color: blue;
+}
+
+.customized-btn-2 {
+  color: purple;
+  background-color: violet;
+}

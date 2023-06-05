@@ -234,3 +234,25 @@ $mediaSizes: (
         color: purple;
     }
 }
+
+// Using extend in SASS
+// Here is an example, let's say we have a class and we can extend the same 
+// using @extend keyword to inherit the styles
+.btn {
+    font-size: 15px;
+    font-weight: 800;
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+
+.customized-btn-1 {
+    @extend .btn;
+    color: red;
+    background-color: blue;
+}
+
+.customized-btn-2 {
+    @extend .btn;
+    color: purple;
+    background-color: violet;
+}
